@@ -6,20 +6,20 @@ console.log(galleryItems);
 
 const gallery = document.querySelector('.gallery');
 
-const items = addGalleryItems(galleryItems);
-gallery.insertAdjacentHTML('beforeend', items);
+ 
+
 
 function addGalleryItems(items) {
-  return items.map(({ preview, original, description }) => {
-        return `<li>
+    const liItems = items.map (({ preview, original, description }) => 
+        `<li>
         <a class="gallery__item" href="${original}">
         <img class="gallery__image" src="${preview}"  alt="${description}"/>
-     </a></li>`
-     }).join('');
+     </a></li>`)
+        .join('');
+        gallery.insertAdjacentHTML('afterbegin', liItems);
         }
 
-
-
+        addGalleryItems(galleryItems);
   
    const lightbox = new SimpleLightbox('.gallery a', {
        
