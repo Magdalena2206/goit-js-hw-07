@@ -27,4 +27,3 @@ function addGalleryItems(items) {
        captionDelay: 250,
        
    });
- 
